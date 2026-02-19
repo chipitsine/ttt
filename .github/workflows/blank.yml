@@ -33,4 +33,8 @@ jobs:
              sudo swapoff $swap_device
           done
           
+          if [ -e /swapfile ]; then
+            sudo rm /swapfile
+          fi
+          
           sudo du -sk /* | sort -rn
